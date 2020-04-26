@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+
+
+{% block content%}
+    <h1>Tasks List</h1>
+    {% for task in tasks%}
+    <div class="card mb-3">
+        <div class="card-header">
+            {{task.get_priority_display}}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{task.title}}</h5>
+            <p class="card-text">{{task.description}} </p>
+        </div>
+        <hr>
+        <a href="{%url 'edit' task.id %}">Alter</a>
+        <a href="{%url 'delete' task.id%}">Remove</a>
+    </div>
+    {%endfor%}
+    <a href="{% url 'register'%}"><input type="button" class="btn btn-primary mb-3" value="registerTask"></a>
+{%endblock content%}
