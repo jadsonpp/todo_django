@@ -1,11 +1,12 @@
 class Task:
     #Dunder means private attribute
     #On Python every attribute is public, thats why use Dunder ("__")
-    def __init__(self,title,description,expiration_date,priority):
+    def __init__(self,title,description,expiration_date,priority,user):
         self.__title = title
         self.__description = description
         self.__expiration_date = expiration_date
         self.__priority = priority
+        self.__user = user
 
     def info(self):
         print(self.title)
@@ -42,3 +43,10 @@ class Task:
     @priority.setter
     def priority(self,priority):
         self.__priority = priority
+
+    @property
+    def user(self):
+        return self.__user
+    @user.setter
+    def user(self,user):
+        self.__user = user

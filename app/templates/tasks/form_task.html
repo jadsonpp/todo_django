@@ -1,35 +1,13 @@
 {%extends 'base.html'%}
-{%load filters%}
+{% load crispy_forms_tags %}
 
 {% block content%}
     <form method="post">
         {%csrf_token%}
-
+        {{ form|crispy }}
         <div class="form-group">
-            {{forms.title.errors}}
-            <label>Title: </label>
-            {{form.title | addClass:'form-control'}}
-        </div>
-
-        <div class="form-group">
-            {{forms.description.errors}}
-            <label>Description: </label>
-            {{form.description | addClass:'form-control'}}
-        </div>
-
-        <div class="form-group">
-            {{forms.expiration_date.errors}}
-            <label>Expiration Date: </label>
-            {{form.expiration_date | addClass:'form-control'}}
-        </div>
-
-        <div class="form-group">
-            {{forms.priority.errors}}
-            <label>Priority: </label>
-            {{form.priority | addClass:'form-control'}}
-        </div>    
-        <div class="form-group">
-            <input type="submit" value="Salvar">
+            <input type="submit" value="Save">
+            <input type="submit" value="Return" href="{% url 'tasks'%}">
         </div> 
     </form>
 {%endblock content%}

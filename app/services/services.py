@@ -7,12 +7,12 @@ from ..models import Task
 #Register
 def registerTask(task):
     Task.objects.create(title=task.title,description=task.description,
-                        expiration_date=task.expiration_date,priority=task.priority)
+                        expiration_date=task.expiration_date,priority=task.priority,user=task.user)
     
 #List all objetcs
-def listTasks():
+def listTasks(user):
     #select * from app_task
-    return Task.objects.all()
+    return Task.objects.filter(user=user).all()
 
 #select element by id
 def listTaskId(id):
