@@ -5,7 +5,8 @@ from .views.user import *
 
 urlpatterns = [
     #Login and logout
-    path("",login_user,name="login"),
+    path("",home,name="home"),
+    path("login",login_user,name="login"),
     path("logout",logout_user,name="logout"),
     #CRUD Task
     path("tasks/",list_tasks, name= "tasks"),

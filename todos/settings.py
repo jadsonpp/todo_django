@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'crispy_forms',
+    'django_icons',
 ]
 
 MIDDLEWARE = [
@@ -72,6 +73,33 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'todos.wsgi.application'
 
+# Settings for django-icons
+DJANGO_ICONS = {
+
+    'DEFAULTS': {
+        'renderer': 'fontawesome',
+    },
+
+    'RENDERERS': {
+        'fontawesome': 'FontAwesomeRenderer',
+        'bootstrap3': 'Bootstrap3Renderer',
+    },
+
+    'ICONS': {
+
+        'delete': 'trash',
+        'edit': {
+            'name': 'pencil',
+            'title': 'Edit',
+        },
+        'feather': {
+            'renderer': 'tests.app.renderers.CustomSvgRenderer',
+        },
+        'paperplane': {
+            'renderer': 'tests.app.renderers.CustomSvgRenderer',
+        }
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases

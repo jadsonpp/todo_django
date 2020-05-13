@@ -4,6 +4,13 @@ from django.contrib.auth import authenticate, login,logout
 from django.contrib import messages
 
 
+
+#home page
+def home (request):
+    return render(request,"users/home.html")
+
+
+#
 def register_user(request):
     if request.method == 'POST':
         #Django have a own form for authentication users.
