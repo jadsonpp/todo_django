@@ -1,67 +1,48 @@
-<!doctype html>
-{% load static%}
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Todo List</title>
-        <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css'%}">
-        <script data-ad-client="ca-pub-8738773765455299" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    </head>
-    
-    <body>
+{% extends 'base_logout.html'%}
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Tasks management</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
 
-          </nav>
+{%block content%}
 
-        <main class="container">
-            <h2>Bem vindo ao Todo 10.</h2>
+    <h2>Bem vindo ao Todo 10.</h2>
 
-            <div class="card mb-3">
-                <div class="card-header">
-                    <p>O que é o projeto todo10?</p>
-                </div>
-        
-                <div class="card-body">
-                    <p>Esse projeto tem como finalidade ajudar as pessoas a se organizar melhor, por falta de software que
-                    atenda a necessidade de organização das tarefas rotineiras de facil acesso e gratuita, surgiu o todo10.
-                    </p>
-                </div>
+    <div class="card mb-3">
+        <div class="card-header">
+            <p>O que é o projeto todo10?</p>
+        </div>
+
+        <div class="card-body">
+            <p>Esse projeto tem como finalidade ajudar as pessoas a se organizar melhor, por falta de software que
+            atenda a necessidade de organização das tarefas rotineiras de facil acesso e gratuita, surgiu o todo10.
+            </p>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-header">
+            <p>Funcionalidade</p>
+        </div>
+
+        <div class="card-body">
+            <p>O todos10 tem como sua principal funcionalidade promover um local onde os usuários possam
+            registrar sua lista de a fazeres, cada tarefa tem seu nome, descrição e seu nível.
+            O nível de prioridade é separado em Alto, médio ou baixo, respectivamente High, medium e low.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+            <p>Já possui uma conta?</p>
+            <a href="{%url 'login'%}" >Logar</a>
             </div>
-        
-            <div class="card mb-3">
-                <div class="card-header">
-                    <p>Funcionalidade</p>
-                </div>
-        
-                <div class="card-body">
-                    <p>O todos10 tem como sua principal funcionalidade promover um local onde os usuários possam
-                    registrar sua lista de a fazeres, cada tarefa tem seu nome, descrição e seu nível.
-                    O nível de prioridade é separado em Alto, médio ou baixo, respectivamente High, medium e low.
-                    </p>
-                </div>
+            <div class="col-md-auto">
+            <p>Não possui uma conta?</p>
+            <a href="{%url 'user_register'%}" >Criar conta</a>
             </div>
-        
-            <div class="container">
-                <div class="row justify-content-md-center">
-                    <div class="col-md-auto">
-                    <p>Já possui uma conta?</p>
-                    <a href="{%url 'login'%}" >Logar</a>
-                    </div>
-                    <div class="col-md-auto">
-                    <p>Não possui uma conta?</p>
-                    <a href="{%url 'user_register'%}" >Criar conta</a>
-                    </div>
-                </div>
-            </div>
-        
-        </main>  
-    </body>
-</html>
+        </div>
+    </div>
+
+
+
+{endblock content}
